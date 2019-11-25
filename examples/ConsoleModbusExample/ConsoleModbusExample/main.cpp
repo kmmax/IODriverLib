@@ -12,7 +12,7 @@ using std::endl;
 
 int main(int argc, char *argv[])
 {
-    auto lib = std::make_unique<SharedLib>();
+    auto lib = std::make_unique<IODriverLib>();
     // IODriver info
     cout << "------------------- Info -----------------" << endl;
     cout << lib->info();
