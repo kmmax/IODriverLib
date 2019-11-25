@@ -1,0 +1,96 @@
+### Global
+!.gitkeep
+
+###  Directories
+# build
+build/*
+
+# doc
+doc/manuals/*
+doc/documentation/*
+
+# import
+/import/**/includes/*
+/import/**/lib/win32/*
+/import/**/lib/unix64/*
+/import/**/src/*
+!.gitkeep
+
+
+# export
+/export/**/bin/*
+/export/**/includes/*
+/export/**/test/*
+!.gitkeep
+
+
+# trash
+trash/
+
+### Temporary files
+CMakeFiles/
+TODO.md
+*.swp	# Vim temporary files
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Pricompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# cmake files
+cmake_install.cmake
+CMakeCache.txt
+Makefile
+*.txt.user
+
+# QtCreator generated files
+*.pro.user*
+qmake.cache
+qmake.stash
+*Debug/
+*Release/
+.qmake.cache
+.qmake.stash
+
+# Visual Studio generated files
+*.ib_pdb_index
+*.idb
+*.ilk
+*.pdb
+*.sln
+*.suo
+*.vcproj
+*vcproj.*.*.user
+*.ncb
+*.sdf
+*.opensdf
+*.vcxproj
+*vcxproj.*
+
+# MinGW generated files
+*.Debug
+*.Release
+
+# Python byte code
+*.pyc
