@@ -141,8 +141,7 @@ $ cmake .. -DTEST=OFF && make && make install && cmake .. -DTEST=ON && make && m
 
 Result: binaries and headers will be foudn in **export** folder
 
-
-### Testing 
+### Testing
 1. Windows (MinGW)
 ~~~
 $ mingw32-make.exe test
@@ -151,3 +150,6 @@ $ mingw32-make.exe test
 ~~~
 $ make test
 ~~~
+
+### Quick Start
+[Quick Start](doc/manuals/quick_start/QuickStart.md)
