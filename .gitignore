@@ -6,7 +6,6 @@
 build/*
 
 # doc
-doc/manuals/*
 doc/documentation/*
 
 # import
