@@ -67,24 +67,21 @@ int main(int argc, char *argv[])
 }
 ```
 
-The Modbus/TCP server has the following address map:
-
-| address |  value  || address |  value  |
-|---------|---------||---------|---------|
-|   0     |   101   ||   10    |   111   |
-|   1     |   102   ||   11    |   112   |
-|   2     |   103   ||   12    |   113   |
-|   3     |   104   ||   13    |   114   |
-|   4     |   105   ||   14    |   115   |
-|   5     |   106   ||   15    |   116   |
-|   6     |   107   ||   16    |   117   |
-|   7     |   108   ||   17    |   118   |
-|   8     |   109   ||   18    |   119   |
-|   9     |   110   ||   19    |   120   |
-
-Console output:
-
-![Console out](doc/img/win_example.png)
+<table> <tr> <th colspan="2">Console output</th> </tr> <tr> <td rowspan="16"> <img width="500px" height="auto" alt="screen shot" src="doc/img/win_example.png"> </td> </tr>
+<tr> <td>addr=0, value=101</td> </tr>
+<tr> <td>addr=1, value=102</td> </tr>
+<tr> <td>addr=2, value=103</td> </tr>
+<tr> <td>addr=3, value=104</td> </tr>
+<tr> <td>addr=4, value=105</td> </tr>
+<tr> <td>addr=5, value=106</td> </tr>
+<tr> <td>addr=6, value=107</td> </tr>
+<tr> <td>addr=7, value=108</td> </tr>
+<tr> <td>addr=8, value=109</td> </tr>
+<tr> <td>addr=9, value=110</td> </tr>
+<tr> <td>addr=10, value=111</td> </tr>
+<tr> <td>addr=11, value=112</td> </tr>
+<tr> <td>addr=12, value=113</td> </tr>
+</table>
 
 ### Building
 
@@ -100,8 +97,10 @@ $ sudo apt-get install libmodbus-dev
 The second way - to compile libraries and place its in the **import** folder in  the correspond subdirectory.
 - import/googletest/bin,includes,src
 ![libmodbus](doc/img/import_libmodbus.png)
+
 - import/libmodbus/bin,includes,src
 ![libmodbus](doc/img/import_googletest.png)
+
 + **bin** - executable and libraries files (exe, lib, so etc.)
 + **includes** - headers
 + **src** - sources (if exist)
@@ -124,7 +123,7 @@ $ cmake .. -G "Unix Makefiles" -DTEST=ON &&  mingw32-make.exe &&  mingw32-make.e
 ~~~cmake
 $ cmake .. -G "Unix Makefiles" -DCMAKE_CXX_COMPILER="C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/g++.exe" -DCMAKE_MAKE_PROGRAM="C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/mingw32-make.exe" && mingw32-make.exe &&  mingw32-make.exe install
 ~~~
-5. Building unit tests)
+5. Building unit tests
 ~~~cmake
 $ cmake .. -G "Unix Makefiles" -DCMAKE_CXX_COMPILER="C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/g++.exe" -DCMAKE_MAKE_PROGRAM="C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/mingw32-make.exe" -DTEST=ON &&  mingw32-make.exe &&  mingw32-make.exe install
 ~~~
