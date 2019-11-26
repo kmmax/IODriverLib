@@ -110,96 +110,15 @@ int main(int argc, char *argv[])
 
     return  0;
 }
-</code></pre><p>The Modbus/TCP server has the following address map:</p><table>
-<thead>
-<tr>
-<th>address</th>
-<th>value</th>
-<th></th>
-<th>address</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>101</td>
-<td></td>
-<td>10</td>
-<td>111</td>
-</tr>
-<tr>
-<td>1</td>
-<td>102</td>
-<td></td>
-<td>11</td>
-<td>112</td>
-</tr>
-<tr>
-<td>2</td>
-<td>103</td>
-<td></td>
-<td>12</td>
-<td>113</td>
-</tr>
-<tr>
-<td>3</td>
-<td>104</td>
-<td></td>
-<td>13</td>
-<td>114</td>
-</tr>
-<tr>
-<td>4</td>
-<td>105</td>
-<td></td>
-<td>14</td>
-<td>115</td>
-</tr>
-<tr>
-<td>5</td>
-<td>106</td>
-<td></td>
-<td>15</td>
-<td>116</td>
-</tr>
-<tr>
-<td>6</td>
-<td>107</td>
-<td></td>
-<td>16</td>
-<td>117</td>
-</tr>
-<tr>
-<td>7</td>
-<td>108</td>
-<td></td>
-<td>17</td>
-<td>118</td>
-</tr>
-<tr>
-<td>8</td>
-<td>109</td>
-<td></td>
-<td>18</td>
-<td>119</td>
-</tr>
-<tr>
-<td>9</td>
-<td>110</td>
-<td></td>
-<td>19</td>
-<td>120</td>
-</tr>
-</tbody>
-</table><p>Console output:</p><p><img src="doc/img/win_example.png" alt="Console out"></p><h3 id="building"><a name="building" href="#building"></a>Building</h3><h4 id="prerequisites"><a name="prerequisites" href="#prerequisites"></a>Prerequisites</h4><ul>
+</code></pre><br><br><br><br><br><br><br><br><br><br><br><br><br><br><table> <tbody><tr> <th colspan="2">Console output</th> </tr> <tr> <td rowspan="16"> <img width="500px" height="auto" alt="screen shot" src="doc/img/win_example.png"> </td> </tr><tr> <td>addr=0, value=101</td> </tr><tr> <td>addr=1, value=102</td> </tr><tr> <td>addr=2, value=103</td> </tr><tr> <td>addr=3, value=104</td> </tr><tr> <td>addr=4, value=105</td> </tr><tr> <td>addr=5, value=106</td> </tr><tr> <td>addr=6, value=107</td> </tr><tr> <td>addr=7, value=108</td> </tr><tr> <td>addr=8, value=109</td> </tr><tr> <td>addr=9, value=110</td> </tr><tr> <td>addr=10, value=111</td> </tr><tr> <td>addr=11, value=112</td> </tr><tr> <td>addr=12, value=113</td> </tr></tbody></table><h3 id="building"><a name="building" href="#building"></a>Building</h3><h4 id="prerequisites"><a name="prerequisites" href="#prerequisites"></a>Prerequisites</h4><ul>
 <li><a href="https://libmodbus.org/"><strong>libmodbus</strong></a><br>For installing libmodbus in Debian/Ubuntu type in terminal<pre class="cmake hljs"><code class="cmake" data-origin="<pre><code class=&quot;cmake&quot;>$ sudo apt-get update
 $ sudo apt-get install libmodbus-dev
 </code></pre>">$ sudo apt-get update
 $ sudo apt-get <span class="hljs-keyword">install</span> libmodbus-dev
 </code></pre>
-</li><li><a href="https://github.com/google/googletest.git"><strong>googletest</strong></a> (optionally for testing)</li></ul><p>The second way - to compile libraries and place its in the <strong>import</strong> folder in  the correspond subdirectory.</p><ul>
-<li>import/googletest/bin,includes,src<br><img src="doc/img/import_libmodbus.png" alt="libmodbus"></li><li>import/libmodbus/bin,includes,src<br><img src="doc/img/import_googletest.png" alt="libmodbus"></li></ul><ul>
+</li><li><a href="https://github.com/google/googletest.git"><strong>googletest</strong></a> (optionally for testing)</li></ul><p>The second way - to compile (<a href="doc/manuals/libmodbus_building.md">libmodbus</a>, <a href="doc/manuals/googletest_building.md">googletest</a>) libraries and place its in the <strong>import</strong> folder in  the correspond subdirectory.</p><ul>
+<li>import/googletest/bin,includes,src</li></ul><p><img src="doc/img/import_libmodbus.png" alt="libmodbus"></p><ul>
+<li>import/libmodbus/bin,includes,src</li></ul><p><img src="doc/img/import_googletest.png" alt="libmodbus"></p><ul>
 <li><strong>bin</strong> - executable and libraries files (exe, lib, so etc.)</li><li><strong>includes</strong> - headers</li><li><strong>src</strong> - sources (if exist)</li></ul><h4 id="compilation-in-windows-(mingw)"><a name="compilation-in-windows-(mingw)" href="#compilation-in-windows-(mingw)"></a>Compilation in windows (MinGW)</h4><ol>
 <li>Create and go to the <strong>build</strong> directory<pre class="cmake hljs"><code class="cmake" data-origin="<pre><code class=&quot;cmake&quot;>$ mkdir build &amp;amp;&amp;amp; cd build
 </code></pre>">$ mkdir build &amp;&amp; cd build
@@ -213,7 +132,7 @@ $ sudo apt-get <span class="hljs-keyword">install</span> libmodbus-dev
 </li><li>If you want to use another compiler you should specify it directly (For example MinGW from Qt)<pre class="cmake hljs"><code class="cmake" data-origin="<pre><code class=&quot;cmake&quot;>$ cmake .. -G &quot;Unix Makefiles&quot; -DCMAKE_CXX_COMPILER=&quot;C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/g++.exe&quot; -DCMAKE_MAKE_PROGRAM=&quot;C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/mingw32-make.exe&quot; &amp;amp;&amp;amp; mingw32-make.exe &amp;amp;&amp;amp;  mingw32-make.exe install
 </code></pre>">$ cmake .. -G <span class="hljs-string">"Unix Makefiles"</span> -DCMAKE_CXX_COMPILER=<span class="hljs-string">"C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/g++.exe"</span> -DCMAKE_MAKE_PROGRAM=<span class="hljs-string">"C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/mingw32-make.exe"</span> &amp;&amp; mingw32-make.exe &amp;&amp;  mingw32-make.exe <span class="hljs-keyword">install</span>
 </code></pre>
-</li><li>Building unit tests)<pre class="cmake hljs"><code class="cmake" data-origin="<pre><code class=&quot;cmake&quot;>$ cmake .. -G &quot;Unix Makefiles&quot; -DCMAKE_CXX_COMPILER=&quot;C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/g++.exe&quot; -DCMAKE_MAKE_PROGRAM=&quot;C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/mingw32-make.exe&quot; -DTEST=ON &amp;amp;&amp;amp;  mingw32-make.exe &amp;amp;&amp;amp;  mingw32-make.exe install
+</li><li>Building unit tests<pre class="cmake hljs"><code class="cmake" data-origin="<pre><code class=&quot;cmake&quot;>$ cmake .. -G &quot;Unix Makefiles&quot; -DCMAKE_CXX_COMPILER=&quot;C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/g++.exe&quot; -DCMAKE_MAKE_PROGRAM=&quot;C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/mingw32-make.exe&quot; -DTEST=ON &amp;amp;&amp;amp;  mingw32-make.exe &amp;amp;&amp;amp;  mingw32-make.exe install
 </code></pre>">$ cmake .. -G <span class="hljs-string">"Unix Makefiles"</span> -DCMAKE_CXX_COMPILER=<span class="hljs-string">"C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/g++.exe"</span> -DCMAKE_MAKE_PROGRAM=<span class="hljs-string">"C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/mingw32-make.exe"</span> -DTEST=<span class="hljs-keyword">ON</span> &amp;&amp;  mingw32-make.exe &amp;&amp;  mingw32-make.exe <span class="hljs-keyword">install</span>
 </code></pre>
 </li></ol><h4 id="compilation-in-linux-(gcc)"><a name="compilation-in-linux-(gcc)" href="#compilation-in-linux-(gcc)"></a>Compilation in Linux (GCC)</h4><ol>

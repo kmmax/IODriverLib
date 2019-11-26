@@ -94,7 +94,7 @@ $ sudo apt-get install libmodbus-dev
 ~~~
 - [**googletest**](https://github.com/google/googletest.git) (optionally for testing)
 
-The second way - to compile libraries and place its in the **import** folder in  the correspond subdirectory.
+The second way - to compile ([libmodbus](doc/manuals/libmodbus_building.md), [googletest](doc/manuals/googletest_building.md)) libraries and place its in the **import** folder in  the correspond subdirectory.
 - import/googletest/bin,includes,src
 
 ![libmodbus](doc/img/import_libmodbus.png)
