@@ -96,9 +96,10 @@ $ sudo apt-get install libmodbus-dev
 
 The second way - to compile libraries and place its in the **import** folder in  the correspond subdirectory.
 - import/googletest/bin,includes,src
-![libmodbus](doc/img/import_libmodbus.png)
 
+![libmodbus](doc/img/import_libmodbus.png)
 - import/libmodbus/bin,includes,src
+
 ![libmodbus](doc/img/import_googletest.png)
 
 + **bin** - executable and libraries files (exe, lib, so etc.)
