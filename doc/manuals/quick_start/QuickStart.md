@@ -11,12 +11,14 @@ $ cd IODriverLib
 $ ROOT=$PWD
 ~~~
 We have the following project structure:
+
 ![structure](screen2.png)
 
 ### 2 Getting libraries
 #### 2.1 libmodbus
 **add here ...**
 We have the following result:
+
 ![libmodbus](screen5.png)
 
 
@@ -43,6 +45,7 @@ $ cp $ROOT/import/googletest/src/build/lib/* $ROOT/import/googletest/lib/unix64/
 $ cp $ROOT/import/googletest/src/googletest/googletest/include/* -R $ROOT/import/googletest/includes/
 ~~~
 We have the following result:
+
 ![googletest](screen6.png)
 
 ### 3 Building **IODriverLib**:
@@ -55,4 +58,5 @@ Execute build command:
 $ cmake .. -DTEST=OFF && make && make install && cmake .. -DTEST=ON && make && make install
 ~~~
 Result:
+
 ![IODriverLib](screen7.png)
