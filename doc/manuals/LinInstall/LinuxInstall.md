@@ -1,6 +1,16 @@
-# Quick Start
+## Installation in Linux
 
-### 1 Getting repository
+You will only need to install automake, autoconf, libtool C++ compiler (gcc) and CMake
+
+## 1 Installing by script
+
+To install, just run the **./install.sh**
+
+## 2 Installing manually
+Or you can do it manually.
+
+
+#### 1.1 Getting repository
 Clone repository:
 ~~~bash
 $ git clone https://github.com/kmmax/IODriverLib.git
@@ -12,22 +22,38 @@ $ ROOT=$PWD
 ~~~
 We have the following project structure:
 
-![structure](screen2.png)
+![structure](screen1.png)
 
-### 2 Getting libraries
-#### 2.1 libmodbus
-**add here ...**
-We have the following result:
+#### 2.2 Getting libraries
+##### 2.2.1 libmodbus
+go to download directory:
+~~~bash
+$ cd $ROOT/import/libmodbus/src/
+~~~
+download **libmodbus** repository:
+~~~bash
+$ git clone https://github.com/stephane/libmodbus.git
+$ cd libmodbus
+~~~
+Build shared library:
+~~~bash
+$ ./autogen.sh
+$ ./configure
+$ make
+~~~
+Copy libraries and headers:
+~~~bash
+$ cp cp $ROOT/import/libmodbus/src/libmodbus/src/.libs/*.so* $ROOT/import/libmodbus/lib/unix64/
+$ cp $ROOT/import/libmodbus/src/libmodbus/src/*.h -R $ROOT/import/libmodbus/includes/
+~~~
+![libmodbus](screen3.png)
 
-![libmodbus](screen5.png)
-
-
-#### 2.2 building googletest
+##### 2.2.2 googletest 
 go to download directory:
 ~~~bash
 $ cd $ROOT/import/googletest/src/
 ~~~
-download **googletest** repository:
+clone **googletest** repository:
 ~~~bash
 $ git clone https://github.com/google/googletest.git
 ~~~
@@ -46,9 +72,9 @@ $ cp $ROOT/import/googletest/src/googletest/googletest/include/* -R $ROOT/import
 ~~~
 We have the following result:
 
-![googletest](screen6.png)
+![googletest](screen2.png)
 
-### 3 Building **IODriverLib**:
+#### 2.3 Building **IODriverLib**:
 Go to the building directory:
 ~~~bash
 $ mkdir $ROOT/build && cd $ROOT/build
@@ -59,4 +85,4 @@ $ cmake .. -DTEST=OFF && make && make install && cmake .. -DTEST=ON && make && m
 ~~~
 Result:
 
-![IODriverLib](screen7.png)
+![IODriverLib](screen4.png)

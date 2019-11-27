@@ -83,63 +83,14 @@ int main(int argc, char *argv[])
 <tr> <td>addr=12, value=113</td> </tr>
 </table>
 
-### Building
+### Installation
+[**Installation in Linux**](doc/manuals/LinInstall/LinuxInstall.md)
+[**Installation in Windows**](doc/manuals/WinInstall/WindowsInstall.md)
 
-#### Prerequisites
-- [**libmodbus**](https://libmodbus.org/)
-For installing libmodbus in Debian/Ubuntu type in terminal
-~~~cmake
-$ sudo apt-get update
-$ sudo apt-get install libmodbus-dev
-~~~
-- [**googletest**](https://github.com/google/googletest.git) (optionally for testing)
-
-The second way - to compile ([libmodbus](doc/manuals/libmodbus_building.md), [googletest](doc/manuals/googletest_building.md)) libraries and place its in the **import** folder in  the correspond subdirectory.
-- import/googletest/bin,includes,src
-
-![libmodbus](doc/img/import_libmodbus.png)
-- import/libmodbus/bin,includes,src
-
-![libmodbus](doc/img/import_googletest.png)
-
+Destination directory:
 + **bin** - executable and libraries files (exe, lib, so etc.)
 + **includes** - headers
 + **src** - sources (if exist)
-
-
-#### Compilation in windows (MinGW)
-1. Create and go to the **build** directory
-~~~cmake
-$ mkdir build && cd build
-~~~
-2. For building library execute the command:
-~~~cmake
-$ cmake .. -G "Unix Makefiles" mingw32-make.exe &&  mingw32-make.exe install
-~~~
-3. Build unit tests (if need). (Option **-DTEST=ON** enables building tests)
-~~~cmake
-$ cmake .. -G "Unix Makefiles" -DTEST=ON &&  mingw32-make.exe &&  mingw32-make.exe install
-~~~
-4. If you want to use another compiler you should specify it directly (For example MinGW from Qt)
-~~~cmake
-$ cmake .. -G "Unix Makefiles" -DCMAKE_CXX_COMPILER="C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/g++.exe" -DCMAKE_MAKE_PROGRAM="C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/mingw32-make.exe" && mingw32-make.exe &&  mingw32-make.exe install
-~~~
-5. Building unit tests
-~~~cmake
-$ cmake .. -G "Unix Makefiles" -DCMAKE_CXX_COMPILER="C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/g++.exe" -DCMAKE_MAKE_PROGRAM="C:/Qt/Qt5.11.2/Tools/mingw530_32/bin/mingw32-make.exe" -DTEST=ON &&  mingw32-make.exe &&  mingw32-make.exe install
-~~~
-
-#### Compilation in Linux (GCC)
-1. Create and go to the **build** directory
-~~~cmake
-$ mkdir build && cd build
-~~~
-2. For building library execute the build command:
-~~~cmake
-$ cmake .. -DTEST=OFF && make && make install && cmake .. -DTEST=ON && make && make install
-~~~
-
-Result: binaries and headers will be foudn in **export** folder
 
 ### Testing
 1. Windows (MinGW)
@@ -151,5 +102,3 @@ $ mingw32-make.exe test
 $ make test
 ~~~
 
-### Quick Start
-[Quick Start](doc/manuals/quick_start/QuickStart.md)
