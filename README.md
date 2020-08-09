@@ -85,6 +85,7 @@ int main(int argc, char *argv[])
 
 ### Installation
 [**Installation in Linux**](doc/manuals/LinInstall/LinuxInstall.md)
+
 [**Installation in Windows**](doc/manuals/WinInstall/WindowsInstall.md)
 
 Destination directory:
