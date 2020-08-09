@@ -86,3 +86,6 @@ $ cmake .. -DTEST=OFF && make && make install && cmake .. -DTEST=ON && make && m
 Result:
 
 ![IODriverLib](screen4.png)
+
+#### 2.4 Setting libraries path in linux:
+[wiki](https://github.com/kmmax/IODriverLib/wiki)
