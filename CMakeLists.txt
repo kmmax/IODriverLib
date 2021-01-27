@@ -1,5 +1,11 @@
 cmake_minimum_required(VERSION 3.10)
 
+# Possible APP_OS values:
+# win32 - mingw 32 bit
+# win64 - mingw 64 bit
+# unix64 - linux 64 bit
+
+
 # prints variable's context
 # prints vars context
 function(print)
@@ -17,7 +23,7 @@ set(CMAKE_CXX_STADARD 11)
 
 
 option(TEST "Builds unit tests" OFF)
-
+set(APP_OS "win32" CACHE STRING "Platform")
 
 project(IODriver LANGUAGES CXX)
 message("=== CMakeLists.txt: Main ====")
@@ -31,13 +37,12 @@ set(DIR_IMPORT ${CMAKE_SOURCE_DIR}/import)
 set(DIR_EXPORT ${CMAKE_SOURCE_DIR}/export)
 set(DIR_TESTS ${CMAKE_SOURCE_DIR}/tests)
 set(DIR_BIN ${CMAKE_SOURCE_DIR}/bin)
-print(DIR_SRC DIR_BUILD DIR_IMPORT DIR_EXPORT DIR_TESTS DIR_BIN TEST)
+print(DIR_SRC DIR_BUILD DIR_IMPORT DIR_EXPORT DIR_TESTS DIR_BIN TEST APP_OS)
 
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY lib)
-
 
 add_subdirectory(src)
 if (TEST)

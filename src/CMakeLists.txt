@@ -8,7 +8,6 @@
 # CYGWIN  : is TRUE on Windows when using the CygWin version of cmake
 
 
-
 set(THIS_PROJECT_NAME "SRC")
 cmake_minimum_required(VERSION 3.10)
 project(THIS_PROJECT_NAME LANGUAGES CXX)
@@ -29,7 +28,8 @@ file(GLOB EXPORT_HEADERS 							# Only Export headers
 	"${DIR_SRC}/${MODULE_NAME}/iodriverlib.h"
 	)
 file(GLOB IMPORT_LIB
-	"${DIR_IMPORT}/libmodbus/lib/win32/*"			# libmodbus
+	"${DIR_IMPORT}/libmodbus/lib/${APP_OS}/*"			# libmodbus
+#	"${DIR_IMPORT}/libmodbus/lib/win64/*"			# libmodbus	
 	)
 include_directories(
 	${DIR_EXPORT}
@@ -43,7 +43,8 @@ add_library(${MODULE_NAME} SHARED ${SOURCES})
 
 # Linking libmodbus
 find_library(LIB_MODBUS modbus PATH 
-	"${DIR_IMPORT}/libmodbus/lib/win32"
+	"${DIR_IMPORT}/libmodbus/lib/${APP_OS}"
+#	"${DIR_IMPORT}/libmodbus/lib/win64"	
 	"${DIR_IMPORT}/libmodbus/lib/unix64"
 	)
 target_link_libraries(${MODULE_NAME} ${LIB_MODBUS})
