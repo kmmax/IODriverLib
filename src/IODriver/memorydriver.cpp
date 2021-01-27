@@ -40,7 +40,7 @@ const IDriver::Data MemoryDriver::readFromSrv(uint16_t addr, uint16_t num)
 
     uint16_t tab_reg[100];
     tab_reg[0] = 22;
-    assert(num < MAX_BUF_SIZE);
+//    assert(num < MAX_BUF_SIZE);
 //    int numOfRegs = modbus_read_registers(m_mb, addr, num, tab_reg);
     int numOfRegs = 10;
     num = 10;

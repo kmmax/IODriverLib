@@ -18,4 +18,10 @@ Init project
 
 **Merged pull requests:**
 
+Init project
+## [v0.1.5] (2020-01-27)
+**Added features:**
+- Added the ability to build by qmake (QtCreator).
+**Fixed bugs:**
+- The MAX_BUF_SIZE (undefined constant) in memory driver is commented out.
 
