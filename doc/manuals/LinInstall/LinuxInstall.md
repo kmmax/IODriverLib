@@ -81,7 +81,7 @@ $ mkdir $ROOT/build && cd $ROOT/build
 ~~~
 Execute build command:
 ~~~bash
-$ cmake .. -DTEST=OFF && make && make install && cmake .. -DTEST=ON && make && make install
+$ cmake .. -DTEST=OFF && make && make install
 ~~~
 Result:
 
