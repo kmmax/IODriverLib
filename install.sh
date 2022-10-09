@@ -51,5 +51,5 @@ then
 	rm -rf $ROOT/build
 fi
 mkdir $ROOT/build && cd $ROOT/build
-cmake .. -DTEST=OFF && make && make install && cmake .. -DTEST=ON && make && make install
+cmake .. -DTEST=OFF && make && make install
 echo "-- Done"
